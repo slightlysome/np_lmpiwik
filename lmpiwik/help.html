@@ -1,0 +1,154 @@
+<h3>Plugin overview</h3>
+
+<p>
+The NP_LMPiwik plugin provides Nucleus CMS integration with the open source web analytics platform <a href="http://piwik.org/">Piwik</a>. 
+Insert the NP_LMPiwik plugin skin variable for the tracking code in all page footers, and the plugin handles the rest.
+</p>
+
+<p>
+You can install Piwik on a webserver and host it yourself, or you can buy Piwik hosting from a Piwik hosting provider.
+</p>
+
+<p>
+Default will the NP_LMPiwik plugin track all activity on pages where the tracking code skin varable is used, 
+but the plugin can be set up to exclude blogs or members from tracking. 
+The NP_LMPiwik plugin shows a visits overview Piwik widget on the plugin admin page. 
+The admin page also have a link to the Piwik Dashboard.
+</p>
+
+<h3>Installation</h3>
+
+<ul>
+<li>
+Upload the NP_LMPiwik.php file and the lmpiwik directory from the zip file to the Nucleus CMS plugins directory (nucleus/plugins) on your web server.
+</li>
+<li>
+Go to the Plugins page in the admin area. You should be able to select the plugin in the dropdown list under the "Install New Plugin" section and press the "Install Plugin" button.
+</li>
+</ul>
+
+<h3>Upgrade</h3>
+
+<ul>
+<li>
+Take a backup of the current plugin files. You will need these if you want to rollback to the previous version after the upgrade.
+</li>
+<li>
+Take a backup of the database used for you Nucleus installation.
+</li>
+<li>
+Replace the old plugin files with the new ones. Do not uninstall the plugin.
+</li>
+<li>
+If a plugin data upgrade is needed, will an upgrade plugin data option be 
+available on the NP_LMPiwik plugin admin page. Choose this option to upgrade the plugin data.
+</li>
+<li>
+
+After the plugin data upgrade has been performed may a rollback option and a commit option be available on the NP_LMSticky 
+plugin admin page. Not all upgrades support the rollback and commit option.
+</li>
+<li>
+If you are not pleased with the new version of the plugin you may use the rollback option to rollback the plugin data upgrade. 
+After the rollback of the plugin data upgrade you have to replace the new plugin files with the old plugin files.
+</li>
+<li>
+If you are pleased with the new version of the plugin you should use the commit option to commit the plugin data upgrade. 
+After the commit of the plugin data upgrade will any rollback and commit options disappear.
+</li>
+</ul>
+
+
+<h3>Configuration</h3>
+
+<p>
+Before you can configure the plugin you have to add your website to Piwik. 
+When you installed Piwik, you created your website in Piwik as a part of the installation process.
+If you need to add a website after the Piwik installation, you can do this in the Piwik website management section when you select Settings.
+</p>
+
+<p>
+The NP_LMPiwik plugin has the following options on the global level:
+</p>
+
+<ul>
+<li><b>Enable Piwik tracking code for site</b> - Enables/disables tracking for the complete site. Overrides any Blog or Member enable setting when set to No. 
+This option defaults to No when the plugin is installed. After you have finished configured the plugin must you set this option to Yes.</li>
+<li><b>Website id in Piwik</b> - The website id for your website in Piwik. You can see your website id in the Piwik website management section when you select Settings.</li>
+<li><b>URL to Piwik installation</b> - The URL to your Piwik installation. Can either be a path relative to the dokument root, or the full URL.</li>
+<li><b>User authentication for admin page widget</b> - To display the Piwik widget on the plugin admin page, you have to register your user authentiation code. 
+You can find your user authentiation code on the API page in Piwik. The user authentiation code should look like this: 
+<code>&token_auth=f7a337cd7f1a53c717c9976edbaa17c5</code></li>
+</ul>
+
+<p>
+The NP_LMPiwik plugin has the following options on the blog level:
+</p>
+
+<ul>
+<li><b>Enable Piwik tracking code for blog</b> - Enables/disables tracking for a blog. Overrides any Global or Member enable setting when set to No. 
+This option defaults to Yes when the plugin is installed and new blogs are created.</li>
+<li><b>Website id in Piwik for this blog</b> - The website id for the website in Piwik used for tracking the activity on this blog. 
+When the value is 0 will the global setting for the website id be used. 
+Should only be set to a non zero value when you want the activity on the different blogs on your site to be tracked seperatly in Piwik. 
+You can see the website id in the website management section in Piwik when you select Settings.</li>
+</ul>
+
+<p>
+The NP_LMPiwik plugin has the following options on the member level:
+</p>
+
+<ul>
+<li><b>Enable Piwik tracking code for member</b> - Enables/disables tracking for a member. Overrides any Global or Blog enable setting when set to No. 
+This option defaults to Yes when the plugin is installed and new members are created.</li>
+</ul>
+
+
+<h3>Usage</h3>
+
+<p>
+After the plugin is installed and configured you need to insert the NP_LMPiwik plugin skin variable where you want the plugin to insert the Piwik tracking code. 
+</p>
+
+<p>
+The NP_LMPiwik plugin skin variable used to insert the Piwik tracking code:
+</p>
+
+<pre>&lt;%LMPiwik(TrackingCode)%&gt;
+</pre>
+
+<p>
+Insert this skin varable just before the <code>&lt;/body&gt;</code> tag in your page footer on all pages that you want to be tracked. 
+</p>
+
+<h3>Support and Bug reports</h3>
+
+<p>
+For additional support and/or bug reports please use the Nucleus forum 
+<a href="http://forum.nucleuscms.org/viewtopic.php?t=21135">plugin announce thread</a> 
+or the <a href="http://www.slightlysome.net/nucleus-plugins/np_lmpiwik">plugin page</a> comment section.
+</p>
+
+
+<h3>Compability</h3>
+
+<p>
+This version of the NP_LMPiwik plugin is tested against version 3.64 of Nucleus CMS and Piwik 1.11. 
+The minimum version of Nucleus CMS needed for using this plugin is 3.60.
+</p>
+
+<h3>Version History</h3>
+
+<ul>
+<li><b>v1.0.0 2013-05-26:</b> by Leo (http://www.slightlysome.net)</li>
+<ul>
+<li>Initial release.</li>
+</ul>
+</ul>
+
+<h3>Download</h3>
+
+<p>
+<a href="http://www.slightlysome.net/download/NP_LMPiwik_v100.zip" title="Download NP_LMPiwik_v100.zip">Download NP_LMPiwik v1.0.0</a>.
+The latest version of the NP_LMPiwik plugin can be downloaded from the NP_LMPiwik <a href="http://www.slightlysome.net/nucleus-plugins/np_lmpiwik">plugin page</a>.
+</p>
